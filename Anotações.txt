@@ -1,0 +1,54 @@
+npm - Maior repositório de pacote do mundo
+Express - Framework minimalista, principal ferramenta usada para criar aplicações backend usando o node.
+Nodemon - Detecta alterações no código e atualiza o servidor automaticamente.
+Sequelize - Modulo que ajuda a trabalhar com o banco de dados (mysql) diretamente com o node.js
+Handlebars - template engine, dá muitas funcionalidades ao html
+
+No cmd aberto na pasta do projeto:
+npm install express --save
+npm install --save sequelize
+npm install --save mysql2
+npm install --save express-handlebars
+
+npm -v: Verifica se o npm está instalado
+npm install (nome pacote) --save(para salvar): sintaxe para instalar qualquer pacote
+mysql -h localhost -u root -p: Para se conectar ao servidor local
+	-h: Qual servidor se conectar
+	-u: Usuario
+	-p: senha
+
+COMANDOS:
+
+SHOW DATABASES; - Mostrar banco de dados
+CREATE DATABASE [nomeDoBanco]; - Crair um banco de dados para armazenar algumas informações do seu projeto
+USE [nomeDoBanco]; - Acessar um banco de dados específico
+SHOW TABLES; - Verificar quais tabelas existem dentro do banco
+DESCRIBE [nomeDaTabela]; - Mostrar estrutura da tabela
+INSERT INTO [nomeDaTabela](camposQueIrãoReceber) VALUES(valoresDosCampos);- Inserir dados
+SELECT * FROM [nomeDaTabela]; - Listar todos os dados da tabela
+	* = Todos
+WHERE - Listar específico
+	SELECT * FROM [nomeDaTabela] WHERE [condição];
+		ex.: SELECT * FROM usuarios WHERE nome = "Pedro";
+DELETE FROM [nomeDaTabela]; - Deleta a tabela toda
+DELETE FROM [nomeDaTabela] WHERE [condição]; - Deletar algum registro no bando de dados
+	ex.: DELETE FROM usuarios WHERE nome = "Pedro";
+UPDATE [nomeDaTabela] SET [qualDadoEspecífico] WHERE [condição]; - Atualizar/Alterar registros específico
+	ex.: UPDATE usuarios SET nome = "Nome de Teste" WHERE nome = "Luis";
+
+
+
+TIPOS: 
+
+VARCHAR - Textos em geral
+	VARCHAR(50) - Número de caracteres máximo, 255 máx.
+CHAR - 	Caracteres
+INT - Inteiro
+
+
+
+
+
+
+node_modules: Todos os módulos que forem instalados no seu projeto estarão dentro desta pasta
+-g: Flag que instala o módulo globalmente
