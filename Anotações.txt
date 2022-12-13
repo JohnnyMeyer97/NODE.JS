@@ -3,12 +3,14 @@ Express - Framework minimalista, principal ferramenta usada para criar aplicaç�
 Nodemon - Detecta alterações no código e atualiza o servidor automaticamente.
 Sequelize - Modulo que ajuda a trabalhar com o banco de dados (mysql) diretamente com o node.js
 Handlebars - template engine, dá muitas funcionalidades ao html
+Body-parser - Módulo usado para processar dados enviados do corpo de uma requisição http
 
 No cmd aberto na pasta do projeto:
 npm install express --save
 npm install --save sequelize
 npm install --save mysql2
 npm install --save express-handlebars
+npm install --save body-parser
 
 npm -v: Verifica se o npm está instalado
 npm install (nome pacote) --save(para salvar): sintaxe para instalar qualquer pacote
@@ -16,6 +18,8 @@ mysql -h localhost -u root -p: Para se conectar ao servidor local
 	-h: Qual servidor se conectar
 	-u: Usuario
 	-p: senha
+
+********** SENHA DO MYSQL: breno2015 ********** 
 
 COMANDOS:
 
@@ -31,10 +35,11 @@ WHERE - Listar específico
 	SELECT * FROM [nomeDaTabela] WHERE [condição];
 		ex.: SELECT * FROM usuarios WHERE nome = "Pedro";
 DELETE FROM [nomeDaTabela]; - Deleta a tabela toda
-DELETE FROM [nomeDaTabela] WHERE [condição]; - Deletar algum registro no bando de dados
+DELETE FROM [nomeDaTabela] WHERE [registro]; - Deletar algum registro no bando de dados
 	ex.: DELETE FROM usuarios WHERE nome = "Pedro";
 UPDATE [nomeDaTabela] SET [qualDadoEspecífico] WHERE [condição]; - Atualizar/Alterar registros específico
 	ex.: UPDATE usuarios SET nome = "Nome de Teste" WHERE nome = "Luis";
+UPDATE [nomeDaTabela] SET [qualDadoEspecífico/campo] = valor WHERE [registro], [qualDadoEspecífico2/campo] = valor WHERE [registro] - Alterar mais de um campo
 
 
 

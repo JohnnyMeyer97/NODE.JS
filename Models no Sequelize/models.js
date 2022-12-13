@@ -1,19 +1,19 @@
 const Sequelize = require('sequelize');
-const sequelize = new Sequelize('test', 'root', '@1n2t3o4', {
+const sequelize = new Sequelize('teste_aula', 'root', 'breno2015', {
     host: 'localhost',
     dialect: 'mysql'
 });
 
-const Postagem = sequelize.define('postagens', { // cria uma tabela
-    titulo: { // Campos
-        type: Sequelize.STRING // Caracteres limitado
+const Postagem = sequelize.define('postagens', {    // cria uma tabela
+    titulo: {                                       // Campos, colunas
+        type: Sequelize.STRING                      // Caracteres limitado
     },
     conteudo: {
-        type: Sequelize.TEXT // Caracteres ilimitado
+        type: Sequelize.TEXT                        // Caracteres ilimitado
     }
 })
 /*
-Postagem.create({ // Adicionando conteúdo
+Postagem.create({                                   // Adicionando conteúdo
     titulo: "Um titulo qualquer",
     conteudo: "Qualquer coisa"
 })
@@ -33,15 +33,18 @@ const Usuario = sequelize.define('usuarios', {
         type: Sequelize.STRING
     }
 })
+
+/*
 Usuario.create({ //Inserir dados
     nome: "Johnny",
     sobrenome: "Ruffino",
     idade: 24,
     email: "johnny@ruffino.com"
 })
+*/
 
 //Postagem.sync({force:true}) // Criando no myslq
-//Usuario.sync({force:true})
+//Usuario.sync({force:true})  // Criando no myslq
 /*
     Após criar a tabela ou adicionar conteúdo a ela, exclua ou comente para não recriar a tabela
 */
