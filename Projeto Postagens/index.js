@@ -14,7 +14,11 @@ const Post = require('./models/Post');
 
 // Rotas
     app.get('/', function(req, res){
-        res.render('home')
+        //Post.findAll({order: [['id', 'DESC']]}).then(function(posts){  // novo - antigo, mudar ordem de visualização da tabela
+        //Post.findAll({order: [['id', 'ASC']]}).then(function(posts){   // antigo -novo, mudar ordem de visualização da tabela
+        Post.findAll().then(function(posts){                            // posts = pode ser qualquer nome, recebe valor de Post.all()
+            res.render('home', {posts: posts})                          // posts: posts = posts:(pode ser qualquer nome), posts - nome da variável passada acima
+        })
     })
 
     app.get('/cad', function(req, res){
@@ -30,6 +34,15 @@ const Post = require('./models/Post');
             res.redirect('/')
         }).catch(function(erro){
             res.send("Falha ao enviar post! "+erro)
+        })
+    })
+
+    app.get('/deletar/:id', function(req, res){
+        Post.destroy({where: {'id': req.params.id}}).then(function(){
+            //res.send("Postagem deletada com sucesso!")
+            res.redirect('/')
+        }).catch(function(erro){
+            res.send("Esta postagem não existe!")
         })
     })
 /*

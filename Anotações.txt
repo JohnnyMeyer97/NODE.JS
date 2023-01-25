@@ -4,6 +4,15 @@ Nodemon - Detecta alterações no código e atualiza o servidor automaticamente.
 Sequelize - Modulo que ajuda a trabalhar com o banco de dados (mysql) diretamente com o node.js
 Handlebars - template engine, dá muitas funcionalidades ao html
 Body-parser - Módulo usado para processar dados enviados do corpo de uma requisição http
+Mysql - Banco de dados, estrutura de tabelas
+MongoDB - É um banco de dados de código aberto, de alta performance, sem esquemas e orientado á documentos, estrutura de documentos(Json) e não tabelas
+Mongoose - Modulo que permite trabalhar com o MongoDB diretamente do Node. Mais simples e com muito mais recurso que o sequelize
+Moment - Melhorar a visualização da data
+bcryptjs - Para criar hash de senhas (encriptar senhas)
+passport - sistema de autenticação
+passport-local - estratégia usada dentro do passport de autenticação
+
+---------------------------//---------------------------//---------------------------//---------------------------
 
 No cmd aberto na pasta do projeto:
 npm install express --save
@@ -11,6 +20,14 @@ npm install --save sequelize
 npm install --save mysql2
 npm install --save express-handlebars
 npm install --save body-parser
+npm install --save mongoose
+npm install --save express-session
+npm install --save connect-flash
+npm install --save moment
+npm install --save bcryptjs
+npm install --save passport
+npm install --save passport-local
+
 
 npm -v: Verifica se o npm está instalado
 npm install (nome pacote) --save(para salvar): sintaxe para instalar qualquer pacote
@@ -50,10 +67,18 @@ VARCHAR - Textos em geral
 CHAR - 	Caracteres
 INT - Inteiro
 
-
-
-
-
-
 node_modules: Todos os módulos que forem instalados no seu projeto estarão dentro desta pasta
 -g: Flag que instala o módulo globalmente
+
+Sobre a "Arrow Function" é importante salientar que ela tem algumas diferenças da "Normal Function". 
+1) As arrow functions pegam o "this" do escopo que estão inseridas, já que não tem o próprio "this". 
+2) Como a Arrow Function é anônima, precisa ser atribuída a uma variável, portanto só pode ser chamada após a sua 
+	declaração.
+3) Arrow function também não tem o próprio objeto "arguments", portanto uma solução para isso é utilizar o spread 
+	operator "...arguments"
+
+-------------------- MONGODB --------------------
+show databases; - Mostrar bancos de dados (Se tiver banco de dados vazio não aparece na lista)
+use "nomeDoBanco"; - Criar banco de dados
+show collections - Mostrar collections
+db."nomeCollection".find() - Listar dados da collection

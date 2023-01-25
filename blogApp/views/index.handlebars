@@ -1,0 +1,26 @@
+<div class="jumbotron">
+    <h1 class="display-4">Bem vindo ao blog do Node!</h1>
+    <p class="lead">Blog desenvolvido no curso de Node.js usando Express + MongoDB</p>
+    <hr class="my-4">
+    <p>Blog de postagens, que faz o cadastro de postagens com uma categoria.</p>
+    <p class="lead">
+        <a href="/usuarios/registro" class="btn btn-primary btn-lg" role="button">Crie uma conta!</a>
+    </p>
+</div>
+
+<h2>Postagens recentes: </h2>
+
+{{#each postagens}}
+    <div class="card mt-4">
+        <div class="card-body">
+            <h3>{{titulo}}</h3>
+            <p>{{descricao}}</p>
+            <a href="/postagens/{{slug}}"><button class="btn btn-success">Leia mais</button></a>
+            <hr>
+            <small>Categoria: {{categoria.nome}}</small><br>
+            <small>Data de publicação: {{#formatDate data}}{{/formatDate}}</small><br>
+        </div>
+    </div>
+{{else}}
+    <p>Nenuma postagem recente!</p>
+{{/each}}
