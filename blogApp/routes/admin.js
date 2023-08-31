@@ -161,8 +161,7 @@ router.post("/postagens/nova", eAdmin, (req, res) => {
 
 router.get("/postagens/edit/:id", eAdmin, (req, res) => {
     Postagem.findOne({_id: req.params.id}).lean().then((postagens) => {
-        Categoria.find().lean()
-        .then((categorias) => {
+        Categoria.find().lean().then((categorias) => {
             res.render("admin/editpostagens", {categorias: categorias, postagens: postagens})       // Quando achar as postagens e as categorias ira renderizar a página editpostagens
         }).catch((err) => {
             req.flash("error_msg", "Houve um erro ao listar as categorias!")

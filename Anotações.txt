@@ -82,3 +82,21 @@ show databases; - Mostrar bancos de dados (Se tiver banco de dados vazio não ap
 use "nomeDoBanco"; - Criar banco de dados
 show collections - Mostrar collections
 db."nomeCollection".find() - Listar dados da collection
+
+-------------------- JAVASCRIPT notas --------------------
+Array.prototype.find()
+	- The find() method returns the first element in the provided array that satisfies the provided testing 
+		function. If no values satisfy the testing function, undefined is returned.
+	- If you need the index of the found element in the array, use findIndex().
+
+-------------------- MONGOOSE notas --------------------
+
+Query.prototype.lean() 
+	- Retorna os documentos de consultas, são objetos JavaScript simples não Documentos Mongoose.
+		Quando documentos são solicitados, estes documentos retornam como documentos Mongoose por padrão. 
+		com o método Mongoose lean() os documentos retornam como objetos JavaScript simples
+	- O método aceita um valor boleano opcional, por padrão assume true.
+
+.populate()
+	- Sempre que em uma coleção fornecemos uma referência (em qualquer campo) para um documento de qualquer 
+		outra coleção, precisamos de um método populate() para preencher o campo com aquele documento.
