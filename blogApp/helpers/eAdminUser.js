@@ -34,7 +34,6 @@ const userAdmin = new Usuario({
     console.log("Erro ao cadastrar usuário ADMIN! Erro: " + err)
 })
 
-/*
 bcrypt.genSalt(10, ( erro, salt ) => {
     bcrypt.hash(userAdmin.senha, salt, (erro, hash) => {
         if( erro ) {
@@ -49,4 +48,3 @@ bcrypt.genSalt(10, ( erro, salt ) => {
         })
     })
 })
-*/

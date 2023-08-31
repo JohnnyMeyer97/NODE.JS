@@ -130,5 +130,5 @@
 // Outros
 const PORT = 8081
 app.listen(PORT, () => {
-    console.log("Servidor rodando!")
+    console.log("Servidor rodando em 8081!")
 })
